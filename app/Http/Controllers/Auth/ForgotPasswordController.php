@@ -29,4 +29,15 @@ class ForgotPasswordController extends Controller
     {
         $this->middleware('guest');
     }
+
+
+    public function ForgotPassword(Request $request)
+    {
+        $response['algo'] = 'algo';
+        $response['mail'] = Mail::to('contacto@tradeintouch.com')->send(new MessageReceived());
+        $response['mail_failure'] = Mail::failures();
+        $response['mail_fake'] = Mail::fake();
+        return $response;
+    }
+
 }
