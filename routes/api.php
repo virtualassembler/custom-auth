@@ -16,9 +16,7 @@ use Illuminate\Http\Request;
 
 
 Route::resource('register', 'Auth\RegisterController');
-
-
-Route::post('user/forgot-password', 'Auth\ForgotPasswordController@ForgotPassword');
+Route::post('forgot-password', 'Auth\ForgotPasswordController@ForgotPassword');
 
 
 
